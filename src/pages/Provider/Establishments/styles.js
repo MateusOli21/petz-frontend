@@ -42,6 +42,7 @@ export const Card = styled.div`
   padding: 12px 16px;
   border-radius: 5px;
   border: 1px solid ${theme.primary};
+  background: ${theme.bgHeaderAndCard};
 
   img {
     max-width: 150px;

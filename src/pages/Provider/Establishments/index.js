@@ -8,10 +8,10 @@ function Establishments() {
 
   return (
     <Container>
-      <h1>Establishments</h1>
+      <h1>Estabelecimentos</h1>
 
       <Cards>
-        <Link> Criar novo</Link>
+        <Link to="add-establishment"> Criar novo</Link>
         <Card>
           <img
             src="https://empreendedor.com.br/wp-content/uploads/2020/04/unnamed-3-2-715x390.jpg"
