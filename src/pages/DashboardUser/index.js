@@ -1,11 +1,13 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Pets from '../../components/PreviewDashboard/Pets';
+import Appointments from '../../components/PreviewDashboard/Appointments';
 
 function Dashboard() {
   return (
     <div>
-      <h1>dashboard user</h1>
+      <Pets />
+      <Appointments />
     </div>
   );
 }
