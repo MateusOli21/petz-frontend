@@ -11,13 +11,18 @@ export function* signIn({ payload }) {
     const { email, password } = payload;
 
     const response = yield call(api.post, 'sessions', { email, password });
-
     const { token, user } = response.data;
 
     api.defaults.headers['Authorization'] = `Bearer ${token}`;
     yield put(signInSuccess(token, user));
-    history.push('/dashboard');
+
+    if (user.provider === true) {
+      history.push('/dashboard_provider');
+    } else {
+      history.push('/dashboard_user');
+    }
   } catch (err) {
+    toast.error('Erro ao realizar login.');
     yield put(signFailure());
   }
 }

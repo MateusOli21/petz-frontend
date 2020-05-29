@@ -19,7 +19,6 @@ function SignIn() {
       toast.error('A senha deve conter no mínimo seis dígitos.');
     }
 
-    console.log(email, password);
     dispatch(signInRequest(email, password));
   }
 
