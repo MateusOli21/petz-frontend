@@ -1,10 +1,4 @@
-const theme = {
-  primary: '#f05a28',
-  secondary: '#31cbff',
-  bg: 'rgba(255,255,255,0.9)',
-  white: '#fff',
-  black: '#333',
-};
+import { theme } from '../../styles/global';
 
 export const selectStyles = {
   control: (styles) => ({

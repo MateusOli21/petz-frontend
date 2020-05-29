@@ -2,6 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+export const theme = {
+  primary: '#f05a28',
+  secondary: '#31cbff',
+  bgHeaderAndCard: '#f8f8f8',
+  white: '#fff',
+  black: '#333',
+};
+
 export default createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&display=swap');
 

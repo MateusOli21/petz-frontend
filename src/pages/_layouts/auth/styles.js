@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-const theme = {
-  primary: '#f05a28',
-  secondary: '#31cbff',
-  bgHeaderAndCard: '#f8f8f8',
-  white: '#fff',
-  black: '#333',
-};
+import { theme } from '../../../styles/global';
 
 export const Wrapper = styled.div`
   width: 100%;
