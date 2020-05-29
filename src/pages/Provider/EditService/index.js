@@ -6,23 +6,22 @@ import Input from '../../../components/InputText';
 
 import { Container } from './styles';
 
-function AddService() {
+function EditService() {
   const id = 1;
-
   return (
     <Container>
-      <h1>Criar novo serviço</h1>
+      <h1>Editar serviço</h1>
 
       <Form>
         <Input name="name" placeholder="Nome do serviço" />
         <Input name="email" placeholder="Valor" />
         <Input name="contact" placeholder="Tempo de duração" />
 
-        <button>Criar</button>
+        <button>Editar</button>
       </Form>
       <Link to={`/establishments/${id}/services`}>Cancelar</Link>
     </Container>
   );
 }
 
-export default AddService;
+export default EditService;

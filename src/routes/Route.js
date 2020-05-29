@@ -20,8 +20,12 @@ export default function RouteWrapper({
     return <Redirect to="/" />;
   }
 
-  if (signed && !isPrivate) {
+  if (signed && !isPrivate && !provider) {
     return <Redirect to="/dashboard" />;
+  }
+
+  if (signed && !isPrivate && provider) {
+    return <Redirect to="/establishments" />;
   }
 
   if (provider && isUser) {

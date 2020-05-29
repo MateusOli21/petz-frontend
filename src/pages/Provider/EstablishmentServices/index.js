@@ -11,14 +11,14 @@ export default function EstablishmentServices() {
       <h1>Serviços</h1>
 
       <Cards>
-        <Link to="/services/add"> Adicionar</Link>
+        <Link to={`/establishments/${id}/services/add`}> Adicionar</Link>
         <Card>
           <div>
             <h2>Banho</h2>
             <h4>R$25,00</h4>
             <span>45 minuto</span>
           </div>
-          <Link to={`services/${id}`}>Editar</Link>
+          <Link to={`/establishments/${id}/services/edit`}>Editar</Link>
         </Card>
 
         <Card>
@@ -27,7 +27,7 @@ export default function EstablishmentServices() {
             <h4>R$25,00</h4>
             <span>45 minuto</span>
           </div>
-          <Link to={`services/${id}`}>Editar</Link>
+          <Link to={`/establishments/${id}/services/edit`}>Editar</Link>
         </Card>
       </Cards>
     </Container>

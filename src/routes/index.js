@@ -12,6 +12,8 @@ import Establishments from '../pages/Provider/Establishments';
 import EstablishmentServices from '../pages/Provider/EstablishmentServices';
 import AddEstablishment from '../pages/Provider/AddEstablishent';
 import AddService from '../pages/Provider/AddService';
+import EditEstablishment from '../pages/Provider/EditEstablishment';
+import EditService from '../pages/Provider/EditService';
 
 export default function Routes() {
   return (
@@ -21,22 +23,23 @@ export default function Routes() {
       <Route path="/403" component={UnauthorizedPage} isPrivate />
       <Route path="/dashboard" component={DashboardUser} isPrivate isUser />
       <Route
-        path="/schedule/:id"
-        component={ScheduleProvider}
-        isPrivate
-        isProvider
-      />
-      <Route
         exact
-        path="/services"
+        path="/establishments/:id/services"
         component={EstablishmentServices}
         isPrivate
         isProvider
       />
       <Route
         exact
-        path="/services/add"
+        path="/establishments/:id/services/add"
         component={AddService}
+        isPrivate
+        isProvider
+      />
+      <Route
+        exact
+        path="/establishments/:id/services/edit"
+        component={EditService}
         isPrivate
         isProvider
       />
@@ -48,8 +51,22 @@ export default function Routes() {
         isProvider
       />
       <Route
+        exact
         path="/establishments/add"
         component={AddEstablishment}
+        isPrivate
+        isProvider
+      />
+      <Route
+        path="/establishments/:id/edit"
+        component={EditEstablishment}
+        isPrivate
+        isProvider
+      />
+
+      <Route
+        path="/establishments/:id/schedule"
+        component={ScheduleProvider}
         isPrivate
         isProvider
       />

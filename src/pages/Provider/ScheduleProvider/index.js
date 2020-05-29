@@ -14,6 +14,8 @@ import {
 import { theme } from '../../../styles/global';
 
 export default function index() {
+  const id = 1;
+
   return (
     <Container>
       <PageTitle>
@@ -32,8 +34,8 @@ export default function index() {
       </PageTitle>
 
       <EditSection>
-        <Link to="/establishments/edit">Ver loja</Link>
-        <Link to="/services">Ver serviços</Link>
+        <Link to={`/establishments/${id}/edit`}>Ver loja</Link>
+        <Link to={`/establishments/${id}/services`}>Ver serviços</Link>
       </EditSection>
 
       <Schedule>

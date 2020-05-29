@@ -21,7 +21,7 @@ function Establishments() {
             <h2>Petshop azul</h2>
             <span>Ipiranga,São Paulo - Sp</span>
             <div>
-              <Link to={`schedule/${id}`}>Ver mais</Link>
+              <Link to={`establishments/${id}/schedule`}>Ver mais</Link>
             </div>
           </Content>
         </Card>
@@ -35,7 +35,7 @@ function Establishments() {
             <h2>Loja de ração </h2>
             <span>Ipiranga,São Paulo - Sp</span>
             <div>
-              <Link to={`schedule/${id}`}>Ver mais</Link>
+              <Link to={`establishments/${id}/schedule`}>Ver mais</Link>
             </div>
           </Content>
         </Card>
