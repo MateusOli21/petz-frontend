@@ -6,7 +6,7 @@ export default (reducers) => {
     {
       key: 'petzapp',
       storage,
-      whitelist: ['auth', 'user'],
+      whitelist: ['auth', 'user', 'pet'],
     },
     reducers
   );

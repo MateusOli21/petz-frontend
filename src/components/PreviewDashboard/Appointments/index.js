@@ -17,7 +17,7 @@ export default function Appointments() {
             <span>29/05/2020</span>
             <span>Confirmado</span>
           </Content>
-          <Link>Ver mais</Link>
+          <Link to="/appointment">Ver mais</Link>
         </Card>
 
         <Card past>
@@ -26,7 +26,7 @@ export default function Appointments() {
             <span>28/05/2020</span>
             <span>Passado</span>
           </Content>
-          <Link>Ver mais</Link>
+          <Link to="/appointment">Ver mais</Link>
         </Card>
       </Cards>
     </Container>
