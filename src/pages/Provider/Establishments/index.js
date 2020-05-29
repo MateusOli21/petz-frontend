@@ -11,7 +11,7 @@ function Establishments() {
       <h1>Estabelecimentos</h1>
 
       <Cards>
-        <Link to="add-establishment"> Criar novo</Link>
+        <Link to="establishments/add"> Adicionar</Link>
         <Card>
           <img
             src="https://empreendedor.com.br/wp-content/uploads/2020/04/unnamed-3-2-715x390.jpg"
@@ -21,7 +21,7 @@ function Establishments() {
             <h2>Petshop azul</h2>
             <span>Ipiranga,São Paulo - Sp</span>
             <div>
-              <Link to={`establishment/${id}`}>Ver mais</Link>
+              <Link to={`schedule/${id}`}>Ver mais</Link>
             </div>
           </Content>
         </Card>
@@ -35,7 +35,7 @@ function Establishments() {
             <h2>Loja de ração </h2>
             <span>Ipiranga,São Paulo - Sp</span>
             <div>
-              <Link to={`establishment/${id}`}>Ver mais</Link>
+              <Link to={`schedule/${id}`}>Ver mais</Link>
             </div>
           </Content>
         </Card>
