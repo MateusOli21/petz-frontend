@@ -43,7 +43,7 @@ export const Card = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin: 0.75rem 0;
   padding: 12px 16px;
   border-radius: 5px;

@@ -11,7 +11,7 @@ export default function EstablishmentServices() {
       <h1>Serviços</h1>
 
       <Cards>
-        <Link to="add-establishment"> Adicionar</Link>
+        <Link to="/services/add"> Adicionar</Link>
         <Card>
           <div>
             <h2>Banho</h2>
