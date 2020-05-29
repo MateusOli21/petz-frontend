@@ -17,9 +17,9 @@ export function* signIn({ payload }) {
     yield put(signInSuccess(token, user));
 
     if (user.provider === true) {
-      history.push('/dashboard_provider');
+      history.push('/establishments');
     } else {
-      history.push('/dashboard_user');
+      history.push('/dashboard');
     }
   } catch (err) {
     toast.error('Erro ao realizar login.');

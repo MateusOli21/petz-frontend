@@ -5,9 +5,11 @@ import Route from './Route';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-import DashboardUser from '../pages/DashboardUser';
-import DashboardProvider from '../pages/DashboardProvider';
 import UnauthorizedPage from '../pages/Unauthorized';
+import DashboardUser from '../pages/User/DashboardUser';
+import ScheduleProvider from '../pages/Provider/ScheduleProvider';
+import Establishments from '../pages/Provider/Establishments';
+import EstablishmentServices from '../pages/Provider/EstablishmentServices';
 
 export default function Routes() {
   return (
@@ -15,15 +17,22 @@ export default function Routes() {
       <Route exact path="/" component={SignIn} />
       <Route path="/signup" component={SignUp} />
       <Route path="/403" component={UnauthorizedPage} isPrivate />
+      <Route path="/dashboard" component={DashboardUser} isPrivate isUser />
       <Route
-        path="/dashboard_user"
-        component={DashboardUser}
+        path="/schedule"
+        component={ScheduleProvider}
         isPrivate
-        isUser
+        isProvider
       />
       <Route
-        path="/dashboard_provider"
-        component={DashboardProvider}
+        path="/services"
+        component={EstablishmentServices}
+        isPrivate
+        isProvider
+      />
+      <Route
+        path="/establishments"
+        component={Establishments}
         isPrivate
         isProvider
       />

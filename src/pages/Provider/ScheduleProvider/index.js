@@ -2,7 +2,7 @@ import React from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 import { Container, PageTitle, ControlDay, Schedule, Card } from './styles';
-import { theme } from '../../styles/global';
+import { theme } from '../../../styles/global';
 
 export default function index() {
   return (

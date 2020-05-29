@@ -21,22 +21,25 @@ export default function Header() {
       <img src={logo} alt="logo" />
 
       <Nav>
-        <Link to="/dashboard_user">
-          <NavOption fixed>Início</NavOption>
-        </Link>
-
         {provider ? (
           <>
+            <Link to="/establishments">
+              <NavOption fixed>Início</NavOption>
+            </Link>
+
             <Link to="/services">
               <NavOption>Meus serviços</NavOption>
             </Link>
           </>
         ) : (
           <>
+            <Link to="/dashboard">
+              <NavOption fixed>Início</NavOption>
+            </Link>
             <Link to="/pets">
               <NavOption>Pets</NavOption>
             </Link>
-            <Link to="/establishments">
+            <Link to="/petshops">
               <NavOption fixed>Petshops</NavOption>
             </Link>
           </>
