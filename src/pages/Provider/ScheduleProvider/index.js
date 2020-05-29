@@ -1,7 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-import { Container, PageTitle, ControlDay, Schedule, Card } from './styles';
+import {
+  Container,
+  PageTitle,
+  ControlDay,
+  Schedule,
+  Card,
+  EditSection,
+} from './styles';
 import { theme } from '../../../styles/global';
 
 export default function index() {
@@ -21,6 +30,11 @@ export default function index() {
           </button>
         </ControlDay>
       </PageTitle>
+
+      <EditSection>
+        <Link to="/establishments/edit">Ver loja</Link>
+        <Link to="/services">Ver serviços</Link>
+      </EditSection>
 
       <Schedule>
         <Card>

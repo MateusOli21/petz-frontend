@@ -26,6 +26,28 @@ export const PageTitle = styled.div`
   }
 `;
 
+export const EditSection = styled.div`
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  a {
+    padding: 4px 8px;
+    border: 1px solid ${theme.secondary};
+    border-radius: 5px;
+    background: transparent;
+    color: ${theme.secondary};
+    font-weight: 700;
+
+    &:hover {
+      color: ${theme.white};
+      background: ${theme.secondary};
+    }
+  }
+`;
+
 export const ControlDay = styled.div`
   display: flex;
   align-items: center;
