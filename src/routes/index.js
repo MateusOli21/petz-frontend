@@ -6,7 +6,6 @@ import Route from './Route';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import UnauthorizedPage from '../pages/Unauthorized';
-import DashboardUser from '../pages/User/DashboardUser';
 import ScheduleProvider from '../pages/Provider/ScheduleProvider';
 import Establishments from '../pages/Provider/Establishments';
 import EstablishmentServices from '../pages/Provider/EstablishmentServices';
@@ -15,6 +14,10 @@ import AddService from '../pages/Provider/AddService';
 import EditEstablishment from '../pages/Provider/EditEstablishment';
 import EditService from '../pages/Provider/EditService';
 
+import DashboardUser from '../pages/User/DashboardUser';
+import Pets from '../pages/User/Pets';
+import Appointments from '../pages/User/Appointments';
+
 export default function Routes() {
   return (
     <Switch>
@@ -22,6 +25,16 @@ export default function Routes() {
       <Route path="/signup" component={SignUp} />
       <Route path="/403" component={UnauthorizedPage} isPrivate />
       <Route path="/dashboard" component={DashboardUser} isPrivate isUser />
+
+      <Route exact path="/pets" component={Pets} isPrivate isUser />
+      <Route
+        exact
+        path="/appointments"
+        component={Appointments}
+        isPrivate
+        isUser
+      />
+
       <Route
         exact
         path="/establishments/:id/services"

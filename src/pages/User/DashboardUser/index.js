@@ -6,8 +6,8 @@ import Appointments from '../../../components/PreviewDashboard/Appointments';
 function Dashboard() {
   return (
     <div>
-      <Pets />
-      <Appointments />
+      <Pets isDashboard />
+      <Appointments isDashboard />
     </div>
   );
 }

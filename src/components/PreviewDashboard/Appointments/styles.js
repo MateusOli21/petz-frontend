@@ -20,6 +20,10 @@ export const TitleContainer = styled.div`
   padding: 1.5rem 0.5rem;
   color: ${theme.primary};
 
+  h1 {
+    font-size: 1.5rem;
+  }
+
   span {
     color: ${theme.black};
   }
@@ -35,6 +39,12 @@ export const TitleContainer = styled.div`
     &:hover {
       color: ${theme.white};
       background: ${darken(0.08, theme.secondary)};
+    }
+  }
+
+  @media (min-width: 720px) {
+    h1 {
+      font-size: 2rem;
     }
   }
 `;
@@ -79,17 +89,39 @@ export const Card = styled.div`
     props.past ? theme.bgOpague : theme.bgHeaderAndCard};
 
   a {
+    border: 1px solid ${theme.secondary};
+    border-radius: 5px;
+    padding: 4px 8px;
     font-weight: 600;
-    color: ${(props) => (props.past ? theme.blackOpaque : theme.black)};
+    color: ${(props) =>
+      props.past ? lighten(0.2, theme.secondary) : theme.secondary};
 
     &:hover {
-      color: ${(props) =>
+      background: ${(props) =>
         props.past ? lighten(0.2, theme.secondary) : theme.secondary};
+      color: ${(props) =>
+        props.past ? lighten(0.2, theme.white) : theme.white};
     }
   }
 
   @media (min-width: 840px) {
     max-width: 360px;
     margin: 0 0.5rem;
+  }
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    font-weight: 600;
+    color: ${(props) =>
+      props.past ? lighten(0.2, theme.secondary) : theme.secondary};
+
+    &:hover {
+      color: ${darken(0.05, theme.secondary)};
+    }
   }
 `;

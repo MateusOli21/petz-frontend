@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../../../styles/global';
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
@@ -38,12 +38,36 @@ export const TitleContainer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const Content = styled.div`
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
-  img {
-    max-width: 150px;
+  h2 {
+    color: ${theme.primary};
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin: 3px 0;
+  }
+
+  ul {
+    display: flex;
+    margin: 0.3rem 0;
+
+    li {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    margin-top: 0.5rem;
   }
 `;
 
@@ -52,10 +76,6 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-
-  @media (min-width: 720px) {
-    display: flex;
-  }
 `;
 
 export const Card = styled.div`
@@ -65,22 +85,55 @@ export const Card = styled.div`
   border: 1px solid ${theme.primary};
   background: ${theme.bgHeaderAndCard};
 
-  button {
+  img {
+    display: none;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: 1px solid #999;
+  }
+
+  a {
     width: 100%;
     border: 0;
     border-radius: 5px;
     padding: 0.5rem 0;
+    text-align: center;
     font-weight: 600;
-    background: ${theme.secondary};
-    color: ${theme.white};
+    border: 1px solid ${theme.secondary};
+    background: transparent;
+    color: ${theme.secondary};
 
     &:hover {
-      background: ${darken(0.08, theme.secondary)};
+      background: ${theme.secondary};
+      color: ${theme.white};
     }
   }
 
-  @media (min-width: 840px) {
-    max-width: 360px;
+  @media (min-width: 860px) {
+    max-width: 520px;
     margin: 0 0.5rem;
+    display: flex;
+
+    img {
+      display: inline;
+
+      max-width: 140px;
+    }
+  }
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    font-weight: 600;
+    color: ${(props) =>
+      props.past ? lighten(0.2, theme.secondary) : theme.secondary};
+
+    &:hover {
+      color: ${darken(0.05, theme.secondary)};
+    }
   }
 `;

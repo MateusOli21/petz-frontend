@@ -1,14 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, TitleContainer, Content, Cards, Card } from './styles';
+import {
+  Container,
+  TitleContainer,
+  Content,
+  Cards,
+  Card,
+  Footer,
+} from './styles';
 
-export default function Appointments() {
+export default function Appointments({ isDashboard }) {
   return (
     <Container>
       <TitleContainer>
-        <h1>Meu pets</h1>
-        <Link to="/pets">Ver todos</Link>
+        <h1>Agendamentos</h1>
+        {isDashboard ? (
+          <Link to="/appointments">Ver todos</Link>
+        ) : (
+          <Link to="/appointments/add">Adicionar</Link>
+        )}
       </TitleContainer>
       <Cards>
         <Card>
@@ -29,6 +40,13 @@ export default function Appointments() {
           <Link to="/appointment">Ver mais</Link>
         </Card>
       </Cards>
+      {isDashboard ? (
+        <></>
+      ) : (
+        <Footer>
+          <Link to="/dashboard">Voltar</Link>
+        </Footer>
+      )}
     </Container>
   );
 }
