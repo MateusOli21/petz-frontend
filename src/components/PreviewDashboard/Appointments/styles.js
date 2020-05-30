@@ -114,6 +114,7 @@ export const Footer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin: 1.5rem 0;
 
   a {
     font-weight: 600;
