@@ -17,6 +17,8 @@ import EditService from '../pages/Provider/EditService';
 import DashboardUser from '../pages/User/DashboardUser';
 import Pets from '../pages/User/Pets';
 import Appointments from '../pages/User/Appointments';
+import AddAppointments from '../pages/User/AddAppointment';
+import AddPet from '../pages/User/AddPet';
 
 export default function Routes() {
   return (
@@ -27,10 +29,19 @@ export default function Routes() {
       <Route path="/dashboard" component={DashboardUser} isPrivate isUser />
 
       <Route exact path="/pets" component={Pets} isPrivate isUser />
+      <Route exact path="/pets/add" component={AddPet} isPrivate isUser />
       <Route
         exact
         path="/appointments"
         component={Appointments}
+        isPrivate
+        isUser
+      />
+
+      <Route
+        exact
+        path="/appointments/add"
+        component={AddAppointments}
         isPrivate
         isUser
       />
