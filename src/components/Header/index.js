@@ -42,6 +42,9 @@ export default function Header() {
             <Link to="/petshops">
               <NavOption fixed>Petshops</NavOption>
             </Link>
+            <Link to="/profile">
+              <NavOption fixed>Perfil</NavOption>
+            </Link>
           </>
         )}
 

@@ -20,6 +20,7 @@ import Appointments from '../pages/User/Appointments';
 import AddAppointments from '../pages/User/AddAppointment';
 import AddPet from '../pages/User/AddPet';
 import EditPet from '../pages/User/EditPet';
+import Profile from '../pages/Profile';
 
 export default function Routes() {
   return (
@@ -28,6 +29,7 @@ export default function Routes() {
       <Route path="/signup" component={SignUp} />
       <Route path="/403" component={UnauthorizedPage} isPrivate />
       <Route path="/dashboard" component={DashboardUser} isPrivate isUser />
+      <Route path="/profile" component={Profile} isPrivate />
 
       <Route exact path="/pets" component={Pets} isPrivate isUser />
       <Route exact path="/pets/add" component={AddPet} isPrivate isUser />
