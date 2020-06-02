@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
@@ -13,8 +13,8 @@ import {
 } from './styles';
 import { theme } from '../../../styles/global';
 
-export default function index() {
-  const id = 1;
+export default function ScheduleProvider() {
+  const { id } = useParams();
 
   return (
     <Container>

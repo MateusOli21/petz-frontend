@@ -36,8 +36,10 @@ export function* createEstablishment({ payload }) {
 
 export function* updateEstablishment({ payload }) {
   try {
-    const { id } = payload.data;
-    const response = yield call(api.put, `establishments/${id}`, payload.data);
+    const { id, ...rest } = payload.data;
+    const establishment = { ...rest };
+
+    const response = yield call(api.put, `establishments/${id}`, establishment);
     yield put(updateEstablishmentSuccess(response.data));
     toast.success('Estabelecimento atualizado com sucesso.');
     history.push('/establishments');
@@ -49,7 +51,8 @@ export function* updateEstablishment({ payload }) {
 
 export function* deleteEstablishment({ payload }) {
   try {
-    const { id } = payload.data;
+    const id = payload.data;
+
     yield call(api.delete, `establishments/${id}`);
     yield put(deleteEstablishmentSuccess(id));
     toast.success('Estabelecimento deletado com sucesso.');

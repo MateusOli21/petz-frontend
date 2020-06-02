@@ -28,6 +28,7 @@ export const Profile = styled.div`
   }
 
   div {
+    min-width: 75px;
     display: none;
     border-left: 1px solid #999;
     padding-left: 0.7rem;
@@ -46,7 +47,7 @@ export const Profile = styled.div`
     }
 
     button {
-      width: 50%;
+      width: 60%;
       border: 1px solid ${theme.primary};
       border-radius: 5px;
       margin-top: 4px;

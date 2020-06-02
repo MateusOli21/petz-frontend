@@ -16,7 +16,7 @@ export const Container = styled.div`
     color: ${theme.primary};
   }
 
-  a {
+  button {
     width: 100%;
     max-width: 420px;
     text-align: center;
@@ -24,12 +24,21 @@ export const Container = styled.div`
     border: 0;
     border-radius: 5px;
     font-weight: 700;
-    background: ${theme.secondary};
+    background: ${theme.primary};
     color: ${theme.white};
 
     &:hover {
-      background: ${darken(0.1, theme.secondary)};
+      background: ${darken(0.1, theme.primary)};
     }
+  }
+
+  a {
+    width: 100%;
+    max-width: 420px;
+    text-align: end;
+    margin-top: 1rem;
+    color: ${theme.primary};
+    font-weight: 700;
   }
 
   form {
@@ -54,18 +63,12 @@ export const Container = styled.div`
     }
 
     button {
-      width: 100%;
-      max-width: 420px;
-      padding: 0.75rem 0;
-      margin: 0.65rem 0;
-      border: 0;
-      border-radius: 5px;
-      font-weight: 700;
-      background: ${theme.primary};
+      margin: 0.5rem 0;
+      background: ${theme.secondary};
       color: ${theme.white};
 
       &:hover {
-        background: ${darken(0.1, theme.primary)};
+        background: ${darken(0.1, theme.secondary)};
       }
     }
   }

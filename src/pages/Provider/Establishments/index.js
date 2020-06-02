@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Container, Card, Cards, Content } from './styles';
 
 function Establishments() {
-  const id = 1;
+  const establishments = useSelector(
+    (state) => state.establishment.establishments
+  );
 
   return (
     <Container>
@@ -12,33 +15,28 @@ function Establishments() {
 
       <Cards>
         <Link to="establishments/add"> Adicionar</Link>
-        <Card>
-          <img
-            src="https://empreendedor.com.br/wp-content/uploads/2020/04/unnamed-3-2-715x390.jpg"
-            alt=""
-          />
-          <Content>
-            <h2>Petshop azul</h2>
-            <span>Ipiranga,São Paulo - Sp</span>
-            <div>
-              <Link to={`establishments/${id}/schedule`}>Ver mais</Link>
-            </div>
-          </Content>
-        </Card>
 
-        <Card>
-          <img
-            src="https://empreendedor.com.br/wp-content/uploads/2020/04/unnamed-3-2-715x390.jpg"
-            alt=""
-          />
-          <Content>
-            <h2>Loja de ração </h2>
-            <span>Ipiranga,São Paulo - Sp</span>
-            <div>
-              <Link to={`establishments/${id}/schedule`}>Ver mais</Link>
-            </div>
-          </Content>
-        </Card>
+        {establishments.map((establishment) => (
+          <Card key={establishment.id}>
+            <img
+              src={
+                establishment.avatar === null
+                  ? 'https://empreendedor.com.br/wp-content/uploads/2020/04/unnamed-3-2-715x390.jpg'
+                  : establishment.avatar.url
+              }
+              alt=""
+            />
+            <Content>
+              <h2>{establishment.name}</h2>
+              <span>{establishment.location}</span>
+              <div>
+                <Link to={`establishments/${establishment.id}/schedule`}>
+                  Ver mais
+                </Link>
+              </div>
+            </Content>
+          </Card>
+        ))}
       </Cards>
     </Container>
   );
