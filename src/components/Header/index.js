@@ -6,11 +6,11 @@ import { signOut } from '../../store/modules/auth/actions';
 
 import logo from '../../assets/logo.svg';
 
-import { Wrapper, Nav, NavOption } from './styles';
+import { Wrapper, Nav, NavOption, Profile } from './styles';
 
 export default function Header() {
   const dispatch = useDispatch();
-  const { provider } = useSelector((state) => state.user.profile);
+  const profile = useSelector((state) => state.user.profile);
 
   function handleSignOut() {
     dispatch(signOut());
@@ -18,10 +18,12 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <img src={logo} alt="logo" />
+      <Link to="/dashboard">
+        <img src={logo} alt="logo" />
+      </Link>
 
       <Nav>
-        {provider ? (
+        {profile.provider ? (
           <>
             <Link to="/establishments">
               <NavOption fixed>Início</NavOption>
@@ -43,12 +45,21 @@ export default function Header() {
               <NavOption fixed>Petshops</NavOption>
             </Link>
             <Link to="/profile">
-              <NavOption fixed>Perfil</NavOption>
+              <NavOption>Perfil</NavOption>
             </Link>
           </>
         )}
 
-        <button onClick={handleSignOut}>Sair</button>
+        <Profile>
+          <div>
+            <strong>{profile.name}</strong>
+
+            <button onClick={handleSignOut}>Sair</button>
+          </div>
+          <Link to="/profile">
+            <img src={profile.avatar.url} alt="profile" />
+          </Link>
+        </Profile>
       </Nav>
     </Wrapper>
   );
