@@ -30,8 +30,8 @@ export const Profile = styled.div`
   div {
     display: none;
     border-left: 1px solid #999;
-    padding-left: 0.6rem;
-    margin-left: 0.6rem;
+    padding-left: 0.7rem;
+    margin-left: 0.7rem;
     text-align: right;
     align-items: flex-end;
     flex-direction: column;
@@ -50,6 +50,7 @@ export const Profile = styled.div`
       border: 1px solid ${theme.primary};
       border-radius: 5px;
       margin-top: 4px;
+      padding: 3px 0;
       background: transparent;
       font-size: 0.75rem;
       color: ${theme.primary};

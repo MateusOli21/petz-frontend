@@ -75,8 +75,12 @@ export const Content = styled.div`
 export const Cards = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+
+  @media (min-width: 840px) {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
 `;
 
 export const Card = styled.div`
