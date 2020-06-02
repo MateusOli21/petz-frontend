@@ -13,6 +13,7 @@ import {
 
 export function* createPet({ payload }) {
   try {
+    console.log('akldalkndaslnlkn');
     const response = yield call(api.post, 'pets', payload.data);
     const {
       id,
@@ -23,8 +24,19 @@ export function* createPet({ payload }) {
       weight,
       castred,
       comments,
+      avatar,
     } = response.data;
-    const pet = { id, user_id, name, sex, age, weight, castred, comments };
+    const pet = {
+      id,
+      user_id,
+      name,
+      sex,
+      age,
+      weight,
+      castred,
+      comments,
+      avatar,
+    };
     yield put(createPetSuccess(pet));
     history.push('/pets');
   } catch (err) {

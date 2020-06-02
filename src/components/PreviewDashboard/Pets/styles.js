@@ -45,6 +45,7 @@ export const Content = styled.div`
 
   h2 {
     color: ${theme.primary};
+    text-transform: uppercase;
   }
 
   p {
@@ -57,7 +58,7 @@ export const Content = styled.div`
     margin: 0.3rem 0;
 
     li {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
       margin-right: 0.5rem;
     }
@@ -74,7 +75,7 @@ export const Content = styled.div`
 export const Cards = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 1.5rem;
 `;
 
@@ -113,10 +114,10 @@ export const Card = styled.div`
     max-width: 520px;
     margin: 0 0.5rem;
     display: flex;
+    align-items: center;
 
     img {
       display: inline;
-
       max-width: 140px;
     }
   }

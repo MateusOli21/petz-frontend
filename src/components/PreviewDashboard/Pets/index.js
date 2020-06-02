@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import {
   Container,
@@ -11,7 +12,11 @@ import {
 } from './styles';
 
 export default function Pets({ isDashboard }) {
-  const id = 1;
+  var pets = useSelector((state) => state.pet.pets);
+
+  if (isDashboard) {
+    pets = pets.slice(0, 3);
+  }
 
   return (
     <Container>
@@ -24,55 +29,41 @@ export default function Pets({ isDashboard }) {
         )}
       </TitleContainer>
       <Cards>
-        <Card>
-          <img
-            src={'https://api.adorable.io/avatars/285/abott@adorable.png'}
-            alt=""
-          />
+        {pets.map((pet) => (
+          <Card key={pet.id}>
+            <img
+              src={
+                pet.avatar === null
+                  ? 'https://api.adorable.io/avatars/285/abott@adorable.png'
+                  : pet.avatar.url
+              }
+              alt="pet"
+            />
 
-          <Content>
-            <h2>Maximus</h2>
-            <ul>
-              <li>macho</li>
-              <li>castrado</li>
-              <li>12 anos</li>
-              <li>11 Kg</li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut
-              mi ultrices, finibus libero sed, ullamcorper orci. Sed laoreet
-              gravida pellentesque.
-            </p>
-            <div>
-              <Link to={`/pets/edit/${id}`}>Ver mais</Link>
-            </div>
-          </Content>
-        </Card>
-
-        <Card>
-          <img
-            src={'https://api.adorable.io/avatars/285/abott@adorable.png'}
-            alt=""
-          />
-
-          <Content>
-            <h2>Woody</h2>
-            <ul>
-              <li>macho</li>
-              <li>castrado</li>
-              <li>05 anos</li>
-              <li>09 Kg</li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut
-              mi ultrices, finibus libero sed, ullamcorper orci. Sed laoreet
-              gravida pellentesque.
-            </p>
-            <div>
-              <Link to={`/pets/edit/${id}`}>Ver mais</Link>
-            </div>
-          </Content>
-        </Card>
+            <Content>
+              <h2>{pet.name}</h2>
+              <ul>
+                <li>{pet.sex === 'male' ? 'Macho' : 'Fêmea'}</li>
+                <li>
+                  {pet.castred === true ? (
+                    'Castrado'
+                  ) : (
+                    <>
+                      <br />
+                      <br />
+                    </>
+                  )}
+                </li>
+                <li>{pet.age} anos</li>
+                <li>{pet.weight} Kg</li>
+              </ul>
+              <p>{pet.comments}</p>
+              <div>
+                <Link to={`/pets/edit/${pet.id}`}>Ver mais</Link>
+              </div>
+            </Content>
+          </Card>
+        ))}
       </Cards>
       {isDashboard ? (
         <></>
