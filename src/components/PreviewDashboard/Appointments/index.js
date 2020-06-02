@@ -28,7 +28,7 @@ export default function Appointments({ isDashboard }) {
             <span>29/05/2020</span>
             <span>Confirmado</span>
           </Content>
-          <Link to="/appointment">Ver mais</Link>
+          <button>Cancelar</button>
         </Card>
 
         <Card past>
@@ -37,7 +37,7 @@ export default function Appointments({ isDashboard }) {
             <span>28/05/2020</span>
             <span>Passado</span>
           </Content>
-          <Link to="/appointment">Ver mais</Link>
+          <button>Cancelar</button>
         </Card>
       </Cards>
       {isDashboard ? (

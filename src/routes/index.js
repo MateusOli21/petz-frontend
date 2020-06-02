@@ -19,6 +19,7 @@ import Pets from '../pages/User/Pets';
 import Appointments from '../pages/User/Appointments';
 import AddAppointments from '../pages/User/AddAppointment';
 import AddPet from '../pages/User/AddPet';
+import EditPet from '../pages/User/EditPet';
 
 export default function Routes() {
   return (
@@ -30,6 +31,7 @@ export default function Routes() {
 
       <Route exact path="/pets" component={Pets} isPrivate isUser />
       <Route exact path="/pets/add" component={AddPet} isPrivate isUser />
+      <Route exact path="/pets/edit/:id" component={EditPet} isPrivate isUser />
       <Route
         exact
         path="/appointments"

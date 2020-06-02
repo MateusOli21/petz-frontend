@@ -88,19 +88,18 @@ export const Card = styled.div`
   background: ${(props) =>
     props.past ? theme.bgOpague : theme.bgHeaderAndCard};
 
-  a {
-    border: 1px solid ${theme.secondary};
+  button {
+    border: 1px solid ${theme.primary};
     border-radius: 5px;
     padding: 4px 8px;
     font-weight: 600;
-    color: ${(props) =>
-      props.past ? lighten(0.2, theme.secondary) : theme.secondary};
+    background: ${(props) =>
+      props.past ? lighten(0.2, theme.primary) : theme.primary};
+    color: ${(props) => (props.past ? darken(0.2, theme.white) : theme.white)};
 
     &:hover {
       background: ${(props) =>
-        props.past ? lighten(0.2, theme.secondary) : theme.secondary};
-      color: ${(props) =>
-        props.past ? lighten(0.2, theme.white) : theme.white};
+        props.past ? lighten(0.2, theme.primary) : darken(0.05, theme.primary)};
     }
   }
 

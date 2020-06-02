@@ -44,7 +44,7 @@ export default function Pets({ isDashboard }) {
               gravida pellentesque.
             </p>
             <div>
-              <Link to={`/pet/${id}`}>Ver mais</Link>
+              <Link to={`/pets/edit/${id}`}>Ver mais</Link>
             </div>
           </Content>
         </Card>
@@ -69,7 +69,7 @@ export default function Pets({ isDashboard }) {
               gravida pellentesque.
             </p>
             <div>
-              <Link to={`/pet/${id}`}>Ver mais</Link>
+              <Link to={`/pets/edit/${id}`}>Ver mais</Link>
             </div>
           </Content>
         </Card>
