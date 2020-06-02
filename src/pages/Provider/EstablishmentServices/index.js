@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-import { Container, Card, Cards } from './styles';
+import { Container, Card, Cards, BackPage } from './styles';
 
 export default function EstablishmentServices() {
-  const id = 1;
+  const { id } = useParams();
 
   return (
     <Container>
@@ -29,6 +29,9 @@ export default function EstablishmentServices() {
           </div>
           <Link to={`/establishments/${id}/services/edit`}>Editar</Link>
         </Card>
+        <BackPage>
+          <Link to={`/establishments/${id}/schedule`}>Voltar</Link>
+        </BackPage>
       </Cards>
     </Container>
   );

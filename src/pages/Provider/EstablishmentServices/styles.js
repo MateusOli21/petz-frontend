@@ -26,6 +26,7 @@ export const Cards = styled.div`
     color: ${theme.secondary};
     border: 1px solid ${theme.secondary};
     border-radius: 5px;
+    margin-bottom: 4px;
     padding: 5px 8px;
 
     &:hover {
@@ -63,7 +64,21 @@ export const Card = styled.div`
       margin: 2px 0;
     }
   }
+`;
 
-  @media (min-width: 720px) {
+export const BackPage = styled.div`
+  width: 100%;
+  text-align: end;
+  margin-top: 0.7rem;
+
+  a {
+    font-size: 1rem;
+    border: none;
+    font-weight: 700;
+
+    &:hover {
+      background: none;
+      color: ${theme.secondary};
+    }
   }
 `;
