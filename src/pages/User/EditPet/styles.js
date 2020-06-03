@@ -8,11 +8,37 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 1.25rem;
+  padding-bottom: 3rem;
 
   h1 {
     margin: 2rem 0;
     font-size: 1.5rem;
     color: ${theme.primary};
+  }
+
+  button {
+    width: 100%;
+    max-width: 420px;
+    padding: 0.75rem 0;
+    border: 0;
+    text-align: center;
+    border-radius: 5px;
+    background: ${theme.primary};
+    color: ${theme.white};
+    font-weight: 700;
+
+    &:hover {
+      background: ${darken(0.05, theme.primary)};
+    }
+  }
+
+  a {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 1rem;
+    color: ${theme.primary};
+    text-align: end;
+    font-weight: 700;
   }
 
   form {
@@ -36,34 +62,12 @@ export const Container = styled.div`
     }
 
     button {
-      width: 100%;
-      padding: 0.75rem 0;
       margin: 0.65rem 0;
-      border: 0;
-      border-radius: 5px;
       background: ${theme.secondary};
-      color: ${theme.white};
-      font-weight: 700;
 
       &:hover {
         background: ${darken(0.1, theme.secondary)};
       }
-    }
-  }
-
-  a {
-    width: 100%;
-    max-width: 420px;
-    padding: 0.75rem 0;
-    border: 0;
-    text-align: center;
-    border-radius: 5px;
-    background: ${theme.primary};
-    color: ${theme.white};
-    font-weight: 700;
-
-    &:hover {
-      background: ${darken(0.05, theme.primary)};
     }
   }
 

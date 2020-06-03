@@ -16,7 +16,7 @@ export default function pets(state = INITIAL_STATE, action) {
         draft.pets.push(action.payload.pet);
       });
 
-    case '@user/UPDATE_PET_SUCCESS':
+    case '@pet/UPDATE_PET_SUCCESS':
       return produce(state, (draft) => {
         const petIndex = draft.pets.findIndex(
           (pet) => pet.id === parseInt(action.payload.pet.id)
@@ -32,7 +32,7 @@ export default function pets(state = INITIAL_STATE, action) {
     case '@pet/DELETE_PET_SUCCESS':
       return produce(state, (draft) => {
         const petIndex = draft.pets.findIndex(
-          (pet) => pet.id === action.payload.id
+          (pet) => pet.id === parseInt(action.payload.id)
         );
 
         if (petIndex >= 0) {

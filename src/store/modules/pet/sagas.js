@@ -13,7 +13,6 @@ import {
 
 export function* createPet({ payload }) {
   try {
-    console.log('akldalkndaslnlkn');
     const response = yield call(api.post, 'pets', payload.data);
     const {
       id,
@@ -26,18 +25,20 @@ export function* createPet({ payload }) {
       comments,
       avatar,
     } = response.data;
-    const pet = {
-      id,
-      user_id,
-      name,
-      sex,
-      age,
-      weight,
-      castred,
-      comments,
-      avatar,
-    };
-    yield put(createPetSuccess(pet));
+
+    yield put(
+      createPetSuccess({
+        id,
+        user_id,
+        name,
+        sex,
+        age,
+        weight,
+        castred,
+        comments,
+        avatar,
+      })
+    );
     history.push('/pets');
   } catch (err) {
     yield put(petsFailure());
@@ -47,9 +48,15 @@ export function* createPet({ payload }) {
 
 export function* updatePet({ payload }) {
   try {
-    const { id } = payload.data;
-    const response = yield call(api.put, `pets/${id}`, payload.data);
-    yield put(updatePetSuccess(response.data));
+    const { petId, ...rest } = payload.data;
+    const petUpdate = { ...rest };
+
+    const response = yield call(api.put, `pets/${petId}`, petUpdate);
+    const { id, name, sex, age, weight, castred, avatar } = response.data;
+
+    yield put(
+      updatePetSuccess({ id, name, sex, age, weight, castred, avatar })
+    );
     history.push('/pets');
   } catch (err) {
     yield put(petsFailure());
@@ -59,8 +66,8 @@ export function* updatePet({ payload }) {
 
 export function* deletePet({ payload }) {
   try {
-    const { id } = payload.data;
-    yield call(api.delete, `pets/${id}`);
+    const id = payload.data;
+    yield call(api.delete, `pets/${parseInt(id)}`);
     yield put(deletePetSuccess(id));
     history.push('/pets');
   } catch (err) {
