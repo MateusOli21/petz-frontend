@@ -50,7 +50,9 @@ function Profile() {
 
         <button type="submit">Confirmar</button>
       </Form>
-      <Link to="/dashboard">Cancelar</Link>
+      <Link to={profile.provider ? '/establishments' : '/dashboard'}>
+        Cancelar
+      </Link>
     </Container>
   );
 }

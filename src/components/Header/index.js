@@ -18,26 +18,18 @@ export default function Header() {
 
   return (
     <Wrapper>
-      <Link to="/dashboard">
+      <Link to={profile.provider ? '/establishments' : '/dashboard'}>
         <img src={logo} alt="logo" />
       </Link>
 
       <Nav>
+        <Link to={profile.provider ? '/establishments' : '/dashboard'}>
+          <NavOption fixed>Início</NavOption>
+        </Link>
         {profile.provider ? (
-          <>
-            <Link to="/establishments">
-              <NavOption fixed>Início</NavOption>
-            </Link>
-
-            <Link to="/services">
-              <NavOption>Meus serviços</NavOption>
-            </Link>
-          </>
+          <></>
         ) : (
           <>
-            <Link to="/dashboard">
-              <NavOption fixed>Início</NavOption>
-            </Link>
             <Link to="/pets">
               <NavOption>Pets</NavOption>
             </Link>
