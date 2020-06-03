@@ -33,7 +33,7 @@ export default function Header() {
             <Link to="/pets">
               <NavOption>Pets</NavOption>
             </Link>
-            <Link to="/petshops">
+            <Link to="/establishments/all">
               <NavOption fixed>Petshops</NavOption>
             </Link>
           </>

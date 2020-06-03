@@ -21,6 +21,8 @@ import AddAppointments from '../pages/User/AddAppointment';
 import AddPet from '../pages/User/AddPet';
 import EditPet from '../pages/User/EditPet';
 import Profile from '../pages/Profile';
+import ListEstablishments from '../pages/User/EstablishmentsList';
+import EstablishmentDetail from '../pages/User/EstablishmentDetail';
 
 export default function Routes() {
   return (
@@ -46,6 +48,22 @@ export default function Routes() {
         exact
         path="/appointments/add"
         component={AddAppointments}
+        isPrivate
+        isUser
+      />
+
+      <Route
+        exact
+        path="/establishments/all"
+        component={ListEstablishments}
+        isPrivate
+        isUser
+      />
+
+      <Route
+        exact
+        path="/establishments/:establishmentId"
+        component={EstablishmentDetail}
         isPrivate
         isUser
       />
