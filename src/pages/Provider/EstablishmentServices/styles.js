@@ -75,10 +75,11 @@ export const BackPage = styled.div`
     font-size: 1rem;
     border: none;
     font-weight: 700;
+    color: ${theme.primary};
 
     &:hover {
       background: none;
-      color: ${theme.secondary};
+      color: ${theme.primary};
     }
   }
 `;

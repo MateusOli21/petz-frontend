@@ -1,25 +1,53 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
 import { Form } from '@unform/web';
+
+import {
+  updateServiceRequest,
+  deleteServiceRequest,
+} from '../../../store/modules/service/actions';
 
 import Input from '../../../components/InputText';
 
 import { Container } from './styles';
 
 function EditService() {
-  const id = 1;
+  const dispatch = useDispatch();
+  const { establishmentId, serviceId } = useParams();
+  const services = useSelector((state) => state.service.services);
+
+  const service = services.find(
+    (service) => service.id === parseInt(serviceId)
+  );
+
+  function handleSubmit(data) {
+    const { value: valueStr, time: timeStr, name } = data;
+    const value = parseInt(valueStr);
+    const time = parseInt(timeStr);
+    dispatch(
+      updateServiceRequest({ establishmentId, serviceId, name, value, time })
+    );
+  }
+
+  function handleDelete() {
+    console.log('asd');
+    dispatch(deleteServiceRequest({ serviceId, establishmentId }));
+  }
+
   return (
     <Container>
       <h1>Editar serviço</h1>
 
-      <Form>
+      <Form initialData={service} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome do serviço" />
-        <Input name="email" placeholder="Valor" />
-        <Input name="contact" placeholder="Tempo de duração" />
+        <Input name="value" placeholder="Valor" />
+        <Input name="time" placeholder="Tempo de duração" />
 
         <button>Editar</button>
       </Form>
-      <Link to={`/establishments/${id}/services`}>Cancelar</Link>
+      <button onClick={handleDelete}>Excluir</button>
+      <Link to={`/establishments/${establishmentId}/services`}>Cancelar</Link>
     </Container>
   );
 }

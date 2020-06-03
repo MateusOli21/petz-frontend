@@ -11,7 +11,7 @@ export default function services(state = INITIAL_STATE, action) {
         draft.services = action.payload.user.services;
       });
 
-    case '@service/CREATE_SERVICE_REQUEST':
+    case '@service/CREATE_SERVICE_SUCCESS':
       return produce(state, (draft) => {
         draft.services.push(action.payload.service);
       });
@@ -32,7 +32,7 @@ export default function services(state = INITIAL_STATE, action) {
     case '@service/DELETE_SERVICE_SUCCESS':
       return produce(state, (draft) => {
         const serviceIndex = draft.services.findIndex(
-          (service) => service.id === action.payload.id
+          (service) => service.id === parseInt(action.payload.id)
         );
 
         if (serviceIndex >= 0) {

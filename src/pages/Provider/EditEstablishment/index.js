@@ -34,7 +34,6 @@ function EditEstablishent() {
   }
 
   function handleDelete() {
-    console.log(id);
     dispatch(deleteEstablishmentRequest(parseInt(id)));
   }
 

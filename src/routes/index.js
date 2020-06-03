@@ -59,14 +59,14 @@ export default function Routes() {
       />
       <Route
         exact
-        path="/establishments/:id/services/add"
+        path="/establishments/:establishmentId/services/add"
         component={AddService}
         isPrivate
         isProvider
       />
       <Route
         exact
-        path="/establishments/:id/services/edit"
+        path="/establishments/:establishmentId/services/:serviceId/edit"
         component={EditService}
         isPrivate
         isProvider

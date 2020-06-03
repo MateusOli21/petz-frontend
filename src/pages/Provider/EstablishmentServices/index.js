@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { priceFormatter } from '../../../utils/priceFormatter';
 
 import { Container, Card, Cards, BackPage } from './styles';
 
 export default function EstablishmentServices() {
   const { id } = useParams();
+  const allServices = useSelector((state) => state.service.services);
+
+  const establishmentServices = allServices.filter(
+    (service) => service.establishment_id === parseInt(id)
+  );
 
   return (
     <Container>
@@ -12,23 +20,22 @@ export default function EstablishmentServices() {
 
       <Cards>
         <Link to={`/establishments/${id}/services/add`}> Adicionar</Link>
-        <Card>
-          <div>
-            <h2>Banho</h2>
-            <h4>R$25,00</h4>
-            <span>45 minuto</span>
-          </div>
-          <Link to={`/establishments/${id}/services/edit`}>Editar</Link>
-        </Card>
 
-        <Card>
-          <div>
-            <h2>Banho e tosa</h2>
-            <h4>R$25,00</h4>
-            <span>45 minuto</span>
-          </div>
-          <Link to={`/establishments/${id}/services/edit`}>Editar</Link>
-        </Card>
+        {establishmentServices.map((service) => (
+          <Card key={service.id}>
+            <div>
+              <h2>{service.name}</h2>
+              <h4>{priceFormatter.format(service.value)}</h4>
+              <span>{service.time} minutos</span>
+            </div>
+            <Link
+              to={`/establishments/${service.establishment_id}/services/${service.id}/edit`}
+            >
+              Editar
+            </Link>
+          </Card>
+        ))}
+
         <BackPage>
           <Link to={`/establishments/${id}/schedule`}>Voltar</Link>
         </BackPage>

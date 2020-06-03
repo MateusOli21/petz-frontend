@@ -13,12 +13,20 @@ import {
 
 export function* createService({ payload }) {
   try {
-    const { id: establishmentId } = payload.data;
-    const response = yield call(api.post, 'services', payload.data);
-    const { id, name, value, time } = response.data;
+    const { establishmentId, ...rest } = payload.data;
+    const service = { ...rest };
 
-    const service = { id, name, value, time };
-    yield put(createServiceSuccess(service));
+    const response = yield call(
+      api.post,
+      `services/${establishmentId}`,
+      service
+    );
+    const { id, name, value, time } = response.data;
+    const establishment_id = response.data.establishment.id;
+
+    yield put(
+      createServiceSuccess({ id, name, value, time, establishment_id })
+    );
     history.push(`/establishments/${establishmentId}/services`);
     toast.success('Serviço criado com sucesso.');
   } catch (err) {
@@ -29,15 +37,20 @@ export function* createService({ payload }) {
 
 export function* updateService({ payload }) {
   try {
-    const { id, establishmentId, ...rest } = payload.data;
+    const { serviceId, establishmentId, ...rest } = payload.data;
     const service = { ...rest };
 
     const response = yield call(
       api.put,
-      `services/${establishmentId}/${id}`,
+      `services/${establishmentId}/${serviceId}`,
       service
     );
-    yield put(updateServiceSuccess(response.data));
+    const { id, name, value, time } = response.data;
+    const establishment_id = response.data.establishment.id;
+
+    yield put(
+      updateServiceSuccess({ id, name, value, time, establishment_id })
+    );
     toast.success('Serviço atualizado com sucesso.');
     history.push(`/establishments/${establishmentId}/services`);
   } catch (err) {
@@ -48,10 +61,10 @@ export function* updateService({ payload }) {
 
 export function* deleteService({ payload }) {
   try {
-    const { id, establishmentId } = payload.data;
+    const { serviceId, establishmentId } = payload.data;
 
-    yield call(api.delete, `services/${establishmentId}/${id}`);
-    yield put(deleteServiceSuccess(id));
+    yield call(api.delete, `services/${establishmentId}/${serviceId}`);
+    yield put(deleteServiceSuccess(serviceId));
     toast.success('Serviço deletado com sucesso.');
     history.push(`/establishments/${establishmentId}/services`);
   } catch (err) {
