@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MdArrowBack, MdAssignment, MdStore } from 'react-icons/md';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { pt } from 'date-fns/locale';
 import {
@@ -12,7 +13,6 @@ import {
   setSeconds,
   isBefore,
 } from 'date-fns';
-import { MdArrowBack } from 'react-icons/md';
 
 import api from '../../../services/api';
 
@@ -121,8 +121,12 @@ export default function ScheduleProvider() {
       </PageTitle>
 
       <EditSection>
-        <Link to={`/establishments/${id}/edit`}>Loja</Link>
-        <Link to={`/establishments/${id}/services`}>Serviços</Link>
+        <Link to={`/establishments/${id}/edit`}>
+          <MdStore size={24} />
+        </Link>
+        <Link to={`/establishments/${id}/services`}>
+          <MdAssignment size={24} />
+        </Link>
       </EditSection>
 
       <Schedule>

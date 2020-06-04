@@ -35,16 +35,7 @@ export const EditSection = styled.div`
 
   a {
     padding: 4px 8px;
-    border: 1px solid ${theme.secondary};
-    border-radius: 5px;
-    background: transparent;
     color: ${theme.secondary};
-    font-weight: 700;
-
-    &:hover {
-      color: ${theme.white};
-      background: ${theme.secondary};
-    }
   }
 `;
 

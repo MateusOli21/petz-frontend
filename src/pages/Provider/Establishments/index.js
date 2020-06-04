@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { MdMore, MdAddBox } from 'react-icons/md';
+import { MdAddBox, MdViewHeadline } from 'react-icons/md';
 
 import { Container, Card, Cards, Content } from './styles';
 
@@ -34,7 +34,7 @@ function Establishments() {
               <span>{establishment.location}</span>
               <div>
                 <Link to={`establishments/${establishment.id}/schedule`}>
-                  <MdMore size={20} />
+                  <MdViewHeadline size={20} />
                 </Link>
               </div>
             </Content>

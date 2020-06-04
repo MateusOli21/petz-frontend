@@ -24,11 +24,11 @@ export const Container = styled.div`
     border: 0;
     border-radius: 5px;
     font-weight: 700;
-    background: ${theme.secondary};
+    background: ${theme.primary};
     color: ${theme.white};
 
     &:hover {
-      background: ${darken(0.1, theme.secondary)};
+      background: ${darken(0.1, theme.primary)};
     }
   }
 
@@ -61,11 +61,11 @@ export const Container = styled.div`
       border: 0;
       border-radius: 5px;
       font-weight: 700;
-      background: ${theme.primary};
+      background: ${theme.secondary};
       color: ${theme.white};
 
       &:hover {
-        background: ${darken(0.1, theme.primary)};
+        background: ${darken(0.1, theme.secondary)};
       }
     }
   }
