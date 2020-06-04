@@ -5,7 +5,7 @@ import { Form } from '@unform/web';
 import { isBefore, parseISO } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
 import { toast } from 'react-toastify';
-import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
+import { MdEmail, MdPhone, MdLocationOn, MdArrowBack } from 'react-icons/md';
 
 import InputSelect from '../../../components/Select';
 import Input from '../../../components/InputText';
@@ -145,7 +145,9 @@ function EstablishmentDetail() {
         </AppointmentsContent>
       </Card>
       <BackPage>
-        <Link to="/establishments/all">Voltar</Link>
+        <Link to="/establishments/all">
+          <MdArrowBack size={24} />
+        </Link>
       </BackPage>
     </Container>
   );

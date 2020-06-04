@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MdMore } from 'react-icons/md';
+import { MdMore, MdArrowBack } from 'react-icons/md';
 
 import api from '../../../services/api';
 
@@ -44,7 +44,9 @@ function ListEstablishments() {
         ))}
       </Cards>
       <BackPage>
-        <Link to="/dashboard">Voltar</Link>
+        <Link to="/dashboard">
+          <MdArrowBack size={24} />
+        </Link>
       </BackPage>
     </Container>
   );

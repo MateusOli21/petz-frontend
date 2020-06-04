@@ -95,12 +95,6 @@ export const Footer = styled.div`
   margin: 1.5rem 0;
 
   a {
-    font-weight: 600;
-    color: ${(props) =>
-      props.past ? lighten(0.2, theme.secondary) : theme.secondary};
-
-    &:hover {
-      color: ${darken(0.05, theme.secondary)};
-    }
+    color: ${theme.primary};
   }
 `;

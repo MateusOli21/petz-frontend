@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { pt } from 'date-fns/locale';
 import { parseISO, format } from 'date-fns';
-import { MdAddBox, MdEventBusy } from 'react-icons/md';
+import { MdAddBox, MdEventBusy, MdArrowBack } from 'react-icons/md';
 
 import api from '../../../services/api';
 
@@ -66,7 +66,9 @@ export default function Appointments({ isDashboard }) {
         <></>
       ) : (
         <Footer>
-          <Link to="/dashboard">Voltar</Link>
+          <Link to="/dashboard">
+            <MdArrowBack size={24} />
+          </Link>
         </Footer>
       )}
     </Container>

@@ -18,10 +18,10 @@ export const BackPage = styled.div`
   width: 100%;
   max-width: 420px;
   text-align: right;
+  margin-top: 0.75rem;
+
   a {
-    margin-top: 1rem;
     color: ${theme.primary};
-    font-weight: 700;
   }
 `;
 

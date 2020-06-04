@@ -127,12 +127,11 @@ export const AppointmentsContent = styled.div`
 
 export const BackPage = styled.div`
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   text-align: right;
   margin-top: 1.2rem;
 
   a {
     color: ${theme.primary};
-    font-weight: 700;
   }
 `;

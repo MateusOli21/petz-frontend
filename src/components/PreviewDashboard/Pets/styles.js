@@ -100,18 +100,7 @@ export const Card = styled.div`
   a {
     width: 100%;
     border: 0;
-    border-radius: 5px;
-    padding: 0.5rem 0;
-    text-align: center;
-    font-weight: 600;
-    border: 1px solid ${theme.secondary};
-    background: transparent;
     color: ${theme.secondary};
-
-    &:hover {
-      background: ${theme.secondary};
-      color: ${theme.white};
-    }
   }
 
   @media (min-width: 860px) {
@@ -135,11 +124,6 @@ export const Footer = styled.div`
 
   a {
     font-weight: 600;
-    color: ${(props) =>
-      props.past ? lighten(0.2, theme.secondary) : theme.secondary};
-
-    &:hover {
-      color: ${darken(0.05, theme.secondary)};
-    }
+    color: ${theme.primary};
   }
 `;

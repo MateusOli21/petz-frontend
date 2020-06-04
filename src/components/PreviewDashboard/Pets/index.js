@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { MdAddBox, MdModeEdit } from 'react-icons/md';
+import { MdAddBox, MdModeEdit, MdArrowBack } from 'react-icons/md';
 
 import {
   Container,
@@ -74,7 +74,9 @@ export default function Pets({ isDashboard }) {
         <></>
       ) : (
         <Footer>
-          <Link to="/dashboard">Voltar</Link>
+          <Link to="/dashboard">
+            <MdArrowBack size={24} />
+          </Link>
         </Footer>
       )}
     </Container>
