@@ -98,7 +98,7 @@ export default function Routes() {
       />
       <Route
         exact
-        path="/establishments/add"
+        path="/establishments/create/one"
         component={AddEstablishment}
         isPrivate
         isProvider

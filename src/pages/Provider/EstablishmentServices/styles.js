@@ -24,15 +24,9 @@ export const Cards = styled.div`
   a {
     font-size: 0.8rem;
     color: ${theme.secondary};
-    border: 1px solid ${theme.secondary};
     border-radius: 5px;
     margin-bottom: 4px;
-    padding: 5px 8px;
-
-    &:hover {
-      color: ${theme.white};
-      background: ${theme.secondary};
-    }
+    margin-right: 2px;
   }
 
   @media (min-width: 720px) {
@@ -76,6 +70,7 @@ export const BackPage = styled.div`
     border: none;
     font-weight: 700;
     color: ${theme.primary};
+    margin-right: 4px;
 
     &:hover {
       background: none;

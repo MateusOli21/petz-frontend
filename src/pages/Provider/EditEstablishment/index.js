@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from '@unform/web';
+import { MdArrowBack } from 'react-icons/md';
 
 import {
   updateEstablishmentRequest,
@@ -50,7 +51,9 @@ function EditEstablishent() {
         <button>Editar</button>
       </Form>
       <button onClick={handleDelete}>Excluit</button>
-      <Link to={`/establishments/${id}/schedule`}>Cancelar</Link>
+      <Link to={`/establishments/${id}/schedule`}>
+        <MdArrowBack size={24} />
+      </Link>
     </Container>
   );
 }

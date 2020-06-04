@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { MdMore, MdAddBox } from 'react-icons/md';
 
 import { Container, Card, Cards, Content } from './styles';
 
@@ -14,7 +15,9 @@ function Establishments() {
       <h1>Estabelecimentos</h1>
 
       <Cards>
-        <Link to="establishments/add"> Adicionar</Link>
+        <Link to="/establishments/create/one">
+          <MdAddBox size={24} />
+        </Link>
 
         {establishments.map((establishment) => (
           <Card key={establishment.id}>
@@ -31,7 +34,7 @@ function Establishments() {
               <span>{establishment.location}</span>
               <div>
                 <Link to={`establishments/${establishment.id}/schedule`}>
-                  Ver mais
+                  <MdMore size={20} />
                 </Link>
               </div>
             </Content>

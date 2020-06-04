@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 import { theme } from '../../styles/global';
 
@@ -29,13 +30,13 @@ export const Profile = styled.div`
   }
 
   div {
-    min-width: 30px;
+    min-width: 55px;
     border-left: 1px solid #999;
     padding-left: 0.1rem;
     margin-left: 0.4rem;
-    text-align: right;
-    align-items: flex-end;
-    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     strong {
       font-size: 0.75rem;
@@ -53,14 +54,13 @@ export const Profile = styled.div`
       border-radius: 5px;
       margin-top: 6px;
       padding: 2px 0;
-      background: transparent;
       font-size: 0.75rem;
-      color: ${theme.primary};
+      background: ${theme.primary};
+      color: ${theme.white};
       font-weight: 600;
 
       &:hover {
-        background: ${theme.primary};
-        color: ${theme.white};
+        background: ${darken(0.05, theme.primary)};
       }
     }
   }
@@ -73,13 +73,16 @@ export const Profile = styled.div`
     div {
       padding-left: 0.7rem;
       margin-left: 0.7rem;
+      text-align: right;
+      align-items: flex-end;
+      flex-direction: column;
 
       strong {
         display: flex;
       }
 
       button {
-        width: 35%;
+        min-width: 30px;
       }
     }
   }

@@ -23,14 +23,6 @@ export const Cards = styled.div`
   a {
     font-size: 0.8rem;
     color: ${theme.secondary};
-    border: 1px solid ${theme.secondary};
-    border-radius: 5px;
-    padding: 5px 8px;
-
-    &:hover {
-      color: ${theme.white};
-      background: ${theme.secondary};
-    }
   }
 `;
 
@@ -79,9 +71,12 @@ export const Content = styled.div`
     margin-top: 1rem;
 
     a {
-      padding: 4px 8px;
-      font-size: 0.65rem;
-      font-weight: 600;
+      border: none;
+
+      &:hover {
+        color: ${theme.secondary};
+        background: none;
+      }
     }
   }
 `;

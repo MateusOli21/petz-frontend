@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Form } from '@unform/web';
+import { MdArrowBack } from 'react-icons/md';
 
 import {
   updateServiceRequest,
@@ -47,7 +48,9 @@ function EditService() {
         <button>Editar</button>
       </Form>
       <button onClick={handleDelete}>Excluir</button>
-      <Link to={`/establishments/${establishmentId}/services`}>Cancelar</Link>
+      <Link to={`/establishments/${establishmentId}/services`}>
+        <MdArrowBack size={24} />
+      </Link>
     </Container>
   );
 }

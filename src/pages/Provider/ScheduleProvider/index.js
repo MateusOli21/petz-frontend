@@ -34,8 +34,8 @@ export default function ScheduleProvider() {
       </PageTitle>
 
       <EditSection>
-        <Link to={`/establishments/${id}/edit`}>Ver loja</Link>
-        <Link to={`/establishments/${id}/services`}>Ver serviços</Link>
+        <Link to={`/establishments/${id}/edit`}>Loja</Link>
+        <Link to={`/establishments/${id}/services`}>Serviços</Link>
       </EditSection>
 
       <Schedule>
