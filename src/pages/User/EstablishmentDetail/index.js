@@ -35,7 +35,6 @@ function EstablishmentDetail() {
   useEffect(() => {
     const fetchEstablishments = async () => {
       const response = await api.get('establishments');
-
       const findEstablishment = response.data.find(
         (establishment) =>
           establishment.profile.id === parseInt(establishmentId)
@@ -45,6 +44,7 @@ function EstablishmentDetail() {
       setAvatar(findEstablishment.profile.avatar);
       setServices(findEstablishment.services);
     };
+
     fetchEstablishments();
   }, [establishmentId]);
 
@@ -60,9 +60,24 @@ function EstablishmentDetail() {
     const { service_id, pet_id, date: dateToFormat } = data;
     const establishment_id = parseInt(establishmentId);
 
-    const isPast = isBefore(parseISO(dateToFormat), new Date());
+    if (!dateToFormat) {
+      return toast.error('Escolha um dia e horário.');
+    }
 
-    if (!isPast) {
+    const isPast = isBefore(parseISO(dateToFormat), new Date());
+    if (isPast) {
+      return toast.error('Datas passadas não podem ser agendadas.');
+    }
+
+    if (!service_id) {
+      return toast.error('Escolha um serviço.');
+    }
+
+    if (!pet_id) {
+      return toast.error('Escolha um pet.');
+    }
+
+    try {
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
       const timezonedDate = zonedTimeToUtc(dateToFormat, timezone);
       const date = timezonedDate;
@@ -78,15 +93,14 @@ function EstablishmentDetail() {
       await api.post('appointments', appointment);
       toast.success('Serviço agendado com sucesso.');
       history.push('/establishments/all');
-    } else {
-      return toast.error('Datas passadas não podem ser agendadas.');
+    } catch (err) {
+      toast.error('Este horário não está disponível');
     }
   }
 
   return (
     <Container>
       <h1>{establishment.name}</h1>
-
       <Card>
         <InfoContent>
           <img

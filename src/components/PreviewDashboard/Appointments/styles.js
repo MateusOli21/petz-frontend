@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { theme } from '../../../styles/global';
-import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
@@ -55,15 +54,13 @@ export const Content = styled.div`
   h2 {
     font-size: 1.25rem;
     margin-bottom: 3px;
-    color: ${(props) =>
-      props.past ? lighten(0.2, theme.primary) : theme.primary};
+    color: ${theme.primary};
   }
 
   span {
-    color: ${(props) => (props.past ? theme.blackOpaque : theme.black)};
+    color: ${theme.black};
     margin-top: 4px;
     font-size: 0.9rem;
-    font-weight: 300;
   }
 `;
 
@@ -74,10 +71,9 @@ export const Card = styled.div`
   align-items: flex-end;
   border-radius: 8px;
   padding: 1.15rem 1.15rem;
-  border: 1px solid
-    ${(props) => (props.past ? lighten(0.2, theme.primary) : theme.primary)};
-  background: ${(props) =>
-    props.past ? theme.bgOpague : theme.bgHeaderAndCard};
+  border: 1px solid ${theme.primary};
+  background: ${theme.bgHeaderAndCard};
+  opacity: ${(props) => (props.past || props.canceled ? 0.6 : 1)};
 
   button {
     display: flex;
