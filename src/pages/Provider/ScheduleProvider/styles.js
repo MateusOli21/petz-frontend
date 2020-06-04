@@ -82,13 +82,15 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid ${theme.primary};
   border-radius: 5px;
+  border: 1px solid ${theme.primary};
   background: ${theme.bgHeaderAndCard};
+  opacity: ${(props) => (props.past ? 0.5 : 1)};
 
   h1 {
     color: ${theme.secondary};
     border-right: 1px solid #999;
+    font-size: 1.25rem;
     margin-right: 0.7rem;
     padding-right: 0.7rem;
   }
@@ -98,14 +100,8 @@ export const Card = styled.div`
     display: block;
 
     h2 {
-      font-size: 1.25rem;
-      color: ${theme.primary};
-      margin-bottom: 2px;
-    }
-
-    h3 {
-      font-weight: bold;
       font-size: 1rem;
+      color: ${theme.primary};
     }
 
     span {
@@ -116,5 +112,20 @@ export const Card = styled.div`
 
   @media (min-width: 840px) {
     max-width: 360px;
+  }
+`;
+
+export const BackPage = styled.div`
+  width: 100%;
+  max-width: 580px;
+  text-align: end;
+  margin: 1rem 0 3rem;
+
+  a {
+    font-size: 1rem;
+    border: none;
+    font-weight: 700;
+    color: ${theme.primary};
+    margin-right: 4px;
   }
 `;
