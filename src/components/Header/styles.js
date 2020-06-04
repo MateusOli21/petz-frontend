@@ -49,7 +49,7 @@ export const Profile = styled.div`
     }
 
     button {
-      width: 80%;
+      min-width: 30px;
       border: 1px solid ${theme.primary};
       border-radius: 5px;
       margin-top: 6px;
@@ -79,10 +79,6 @@ export const Profile = styled.div`
 
       strong {
         display: flex;
-      }
-
-      button {
-        min-width: 30px;
       }
     }
   }

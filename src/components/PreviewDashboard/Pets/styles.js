@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { theme } from '../../../styles/global';
-import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
