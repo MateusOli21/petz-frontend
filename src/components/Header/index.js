@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { MdPowerSettingsNew } from 'react-icons/md';
+import { MdExitToApp } from 'react-icons/md';
 
 import { signOut } from '../../store/modules/auth/actions';
 
@@ -45,7 +45,7 @@ export default function Header() {
             <strong>{profile.name}</strong>
 
             <button onClick={handleSignOut}>
-              <MdPowerSettingsNew size={16} />
+              <MdExitToApp size={20} />
             </button>
           </div>
           <Link to="/profile">

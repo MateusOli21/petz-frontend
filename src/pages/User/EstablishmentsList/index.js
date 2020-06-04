@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MdMore, MdArrowBack } from 'react-icons/md';
+import { MdViewHeadline, MdArrowBack } from 'react-icons/md';
 
 import api from '../../../services/api';
 
@@ -36,7 +36,7 @@ function ListEstablishments() {
               <span>{establishment.profile.location}</span>
               <div>
                 <Link to={`/establishments/${establishment.profile.id}`}>
-                  <MdMore size={20} />
+                  <MdViewHeadline size={20} />
                 </Link>
               </div>
             </Content>

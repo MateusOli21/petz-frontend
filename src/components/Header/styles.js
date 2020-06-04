@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
 
 import { theme } from '../../styles/global';
 
@@ -49,19 +48,10 @@ export const Profile = styled.div`
     }
 
     button {
-      min-width: 30px;
-      border: 1px solid ${theme.primary};
-      border-radius: 5px;
-      margin-top: 6px;
-      padding: 2px 0;
-      font-size: 0.75rem;
-      background: ${theme.primary};
-      color: ${theme.white};
-      font-weight: 600;
-
-      &:hover {
-        background: ${darken(0.05, theme.primary)};
-      }
+      margin-top: 4px;
+      border: none;
+      background: none;
+      color: ${theme.red};
     }
   }
 
