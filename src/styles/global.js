@@ -10,6 +10,7 @@ export const theme = {
   black: '#333',
   blackOpaque: 'rgba(0,0,0,0.5)',
   bgOpague: '#e9e9e9',
+  red: '#f92713',
 };
 
 export default createGlobalStyle`

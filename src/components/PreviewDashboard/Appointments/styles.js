@@ -52,12 +52,8 @@ export const TitleContainer = styled.div`
 export const Cards = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-
-  @media (min-width: 720px) {
-    display: flex;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
 `;
 
 export const Content = styled.div`
@@ -65,6 +61,8 @@ export const Content = styled.div`
   flex-direction: column;
 
   h2 {
+    font-size: 1.25rem;
+    margin-bottom: 3px;
     color: ${(props) =>
       props.past ? lighten(0.2, theme.primary) : theme.primary};
   }
@@ -72,6 +70,7 @@ export const Content = styled.div`
   span {
     color: ${(props) => (props.past ? theme.blackOpaque : theme.black)};
     margin-top: 4px;
+    font-size: 0.9rem;
     font-weight: 300;
   }
 `;
@@ -89,23 +88,10 @@ export const Card = styled.div`
     props.past ? theme.bgOpague : theme.bgHeaderAndCard};
 
   button {
-    border: 1px solid ${theme.primary};
-    border-radius: 5px;
-    padding: 4px 8px;
-    font-weight: 600;
-    background: ${(props) =>
-      props.past ? lighten(0.2, theme.primary) : theme.primary};
-    color: ${(props) => (props.past ? darken(0.2, theme.white) : theme.white)};
-
-    &:hover {
-      background: ${(props) =>
-        props.past ? lighten(0.2, theme.primary) : darken(0.05, theme.primary)};
-    }
-  }
-
-  @media (min-width: 840px) {
-    max-width: 360px;
-    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    border: 0;
+    background: none;
   }
 `;
 
