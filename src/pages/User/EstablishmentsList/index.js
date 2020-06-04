@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MdMore } from 'react-icons/md';
 
 import api from '../../../services/api';
 
@@ -35,7 +36,7 @@ function ListEstablishments() {
               <span>{establishment.profile.location}</span>
               <div>
                 <Link to={`/establishments/${establishment.profile.id}`}>
-                  Ver mais
+                  <MdMore size={20} />
                 </Link>
               </div>
             </Content>
@@ -43,7 +44,7 @@ function ListEstablishments() {
         ))}
       </Cards>
       <BackPage>
-        <Link to="/dashboard">Cancelar</Link>
+        <Link to="/dashboard">Voltar</Link>
       </BackPage>
     </Container>
   );

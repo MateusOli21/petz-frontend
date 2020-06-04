@@ -5,6 +5,7 @@ import { Form } from '@unform/web';
 import { isBefore, parseISO } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
 import { toast } from 'react-toastify';
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 
 import InputSelect from '../../../components/Select';
 import Input from '../../../components/InputText';
@@ -20,6 +21,7 @@ import {
   AppointmentsContent,
   BackPage,
 } from './styles';
+import { theme } from '../../../styles/global';
 
 function EstablishmentDetail() {
   const { establishmentId } = useParams();
@@ -96,9 +98,27 @@ function EstablishmentDetail() {
             alt="petshop"
           />
           <Content>
-            <span>{establishment.location}</span>
-            <span>{establishment.email}</span>
-            <span>{establishment.contact}</span>
+            <span>
+              <MdLocationOn
+                size={16}
+                style={{ marginRight: '8px', color: theme.primary }}
+              />
+              {establishment.location}
+            </span>
+            <span>
+              <MdEmail
+                size={16}
+                style={{ marginRight: '8px', color: theme.primary }}
+              />
+              {establishment.email}
+            </span>
+            <span>
+              <MdPhone
+                size={16}
+                style={{ marginRight: '8px', color: theme.primary }}
+              />{' '}
+              {establishment.contact}
+            </span>
           </Content>
         </InfoContent>
         <AppointmentsContent>

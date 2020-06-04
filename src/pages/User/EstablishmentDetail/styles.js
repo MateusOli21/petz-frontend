@@ -49,13 +49,15 @@ export const InfoContent = styled.div`
 
   img {
     max-width: 150px;
-    margin-right: 1.15rem;
-    padding-right: 1.15rem;
+    margin-right: 0.75rem;
+    padding-right: 0.75rem;
     border-right: 1px solid #999;
   }
 
   @media (min-width: 720px) {
     img {
+      margin-right: 1.1rem;
+      padding-right: 1.1rem;
       max-width: 220px;
     }
   }
@@ -72,13 +74,16 @@ export const Content = styled.div`
   }
 
   span {
-    font-size: 0.75rem;
-    margin-bottom: 3px;
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
   }
+
   @media (min-width: 720px) {
     span {
       font-size: 1rem;
-      margin-bottom: 8px;
+      margin-bottom: 0.7rem;
     }
   }
 `;

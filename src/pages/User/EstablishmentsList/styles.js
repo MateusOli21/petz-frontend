@@ -26,23 +26,12 @@ export const BackPage = styled.div`
 `;
 
 export const Cards = styled.div`
+  width: 100%;
+  max-width: 420px;
   margin-top: 1.75rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  a {
-    font-size: 0.8rem;
-    color: ${theme.secondary};
-    border: 1px solid ${theme.secondary};
-    border-radius: 5px;
-    padding: 5px 8px;
-
-    &:hover {
-      color: ${theme.white};
-      background: ${theme.secondary};
-    }
-  }
 `;
 
 export const Card = styled.div`
@@ -76,6 +65,7 @@ export const Content = styled.div`
 
   h2 {
     color: ${theme.primary};
+    font-size: 1.2rem;
     margin-bottom: 3px;
   }
 
@@ -90,9 +80,8 @@ export const Content = styled.div`
     margin-top: 1rem;
 
     a {
-      padding: 4px 8px;
-      font-size: 0.65rem;
-      font-weight: 600;
+      font-size: 0.8rem;
+      color: ${theme.secondary};
     }
   }
 `;
