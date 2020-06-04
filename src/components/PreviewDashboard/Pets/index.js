@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { MdAddBox, MdModeEdit } from 'react-icons/md';
 
 import {
   Container,
@@ -23,9 +24,11 @@ export default function Pets({ isDashboard }) {
       <TitleContainer>
         <h1>Meu pets</h1>
         {isDashboard ? (
-          <Link to="/pets">Ver todos</Link>
+          <Link to="/pets">Ver mais</Link>
         ) : (
-          <Link to="/pets/add">Adicionar</Link>
+          <Link to="/pets/add">
+            <MdAddBox size={26} />
+          </Link>
         )}
       </TitleContainer>
       <Cards>
@@ -59,7 +62,9 @@ export default function Pets({ isDashboard }) {
               </ul>
               <p>{pet.comments}</p>
               <div>
-                <Link to={`/pets/edit/${pet.id}`}>Ver mais</Link>
+                <Link to={`/pets/edit/${pet.id}`}>
+                  <MdModeEdit size={20} />
+                </Link>
               </div>
             </Content>
           </Card>

@@ -20,6 +20,7 @@ export const Profile = styled.div`
   align-items: center;
 
   img {
+    display: none;
     width: 50px;
     height: 40px;
     margin-left: 0.5rem;
@@ -28,17 +29,17 @@ export const Profile = styled.div`
   }
 
   div {
-    min-width: 75px;
-    display: none;
+    min-width: 30px;
     border-left: 1px solid #999;
-    padding-left: 0.7rem;
-    margin-left: 0.7rem;
+    padding-left: 0.1rem;
+    margin-left: 0.4rem;
     text-align: right;
     align-items: flex-end;
     flex-direction: column;
 
     strong {
       font-size: 0.75rem;
+      display: none;
     }
 
     a {
@@ -47,11 +48,11 @@ export const Profile = styled.div`
     }
 
     button {
-      width: 60%;
+      width: 80%;
       border: 1px solid ${theme.primary};
       border-radius: 5px;
-      margin-top: 4px;
-      padding: 3px 0;
+      margin-top: 6px;
+      padding: 2px 0;
       background: transparent;
       font-size: 0.75rem;
       color: ${theme.primary};
@@ -66,10 +67,20 @@ export const Profile = styled.div`
 
   @media (min-width: 720px) {
     img {
+      display: block;
       margin-left: 0.8rem;
     }
     div {
-      display: flex;
+      padding-left: 0.7rem;
+      margin-left: 0.7rem;
+
+      strong {
+        display: flex;
+      }
+
+      button {
+        width: 35%;
+      }
     }
   }
 `;

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MdNotInterested } from 'react-icons/md';
+
 import { pt } from 'date-fns/locale';
 import { parseISO, format } from 'date-fns';
+import { MdAddBox, MdEventBusy } from 'react-icons/md';
 
 import api from '../../../services/api';
 
@@ -14,7 +15,6 @@ import {
   Card,
   Footer,
 } from './styles';
-import { theme } from '../../../styles/global';
 
 export default function Appointments({ isDashboard }) {
   var [appointments, setAppointments] = useState([]);
@@ -29,7 +29,7 @@ export default function Appointments({ isDashboard }) {
   }, []);
 
   if (isDashboard) {
-    appointments = appointments.slice(0, 2);
+    appointments = appointments.slice(0, 3);
   }
 
   return (
@@ -38,9 +38,11 @@ export default function Appointments({ isDashboard }) {
         <h1>Agendamentos</h1>
 
         {isDashboard ? (
-          <Link to="/appointments">Ver todos</Link>
+          <Link to="/appointments">Ver mais</Link>
         ) : (
-          <Link to="/appointments/add">Adicionar</Link>
+          <Link to="/appointments/add">
+            <MdAddBox size={26} />
+          </Link>
         )}
       </TitleContainer>
       <Cards>
@@ -55,7 +57,7 @@ export default function Appointments({ isDashboard }) {
               </span>
             </Content>
             <button>
-              <MdNotInterested size={22} color={theme.red} />
+              <MdEventBusy size={24} />
             </button>
           </Card>
         ))}

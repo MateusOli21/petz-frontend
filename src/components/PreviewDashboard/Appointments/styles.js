@@ -29,17 +29,9 @@ export const TitleContainer = styled.div`
   }
 
   a {
-    border: 1px solid ${theme.secondary};
-    border-radius: 5px;
-    padding: 5px 8px;
-
-    font-weight: 600;
+    display: flex;
+    align-items: center;
     color: ${theme.secondary};
-
-    &:hover {
-      color: ${theme.white};
-      background: ${darken(0.08, theme.secondary)};
-    }
   }
 
   @media (min-width: 720px) {
@@ -52,7 +44,7 @@ export const TitleContainer = styled.div`
 export const Cards = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.2rem;
 `;
 
@@ -90,8 +82,9 @@ export const Card = styled.div`
   button {
     display: flex;
     align-items: center;
-    border: 0;
     background: none;
+    border: 0;
+    color: ${theme.red};
   }
 `;
 

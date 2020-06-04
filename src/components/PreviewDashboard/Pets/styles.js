@@ -24,17 +24,9 @@ export const TitleContainer = styled.div`
   }
 
   a {
-    border: 1px solid ${theme.secondary};
-    border-radius: 5px;
-    padding: 5px 8px;
-
-    font-weight: 600;
+    display: flex;
+    align-items: center;
     color: ${theme.secondary};
-
-    &:hover {
-      color: ${theme.white};
-      background: ${darken(0.08, theme.secondary)};
-    }
   }
 `;
 
@@ -65,10 +57,18 @@ export const Content = styled.div`
   }
 
   div {
+    width: 100%;
     display: flex;
-    align-items: flex-end;
-    height: 100%;
+    justify-content: flex-end;
     margin-top: 0.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 15%;
+      padding: 3px 0;
+    }
   }
 `;
 
