@@ -40,9 +40,10 @@ export function* createPet({ payload }) {
       })
     );
 
-    toast.sucess('Pet criado com sucesso.');
+    toast.success('Pet criado com sucesso.');
     history.push('/pets');
   } catch (err) {
+    console.log(err);
     yield put(petsFailure());
     toast.error('Erro ao tentar criar pet.');
   }
