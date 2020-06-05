@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Form } from '@unform/web';
 import { MdArrowBack } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 import {
   updateServiceRequest,
@@ -24,6 +25,11 @@ function EditService() {
 
   function handleSubmit(data) {
     const { value: valueStr, time: timeStr, name } = data;
+
+    if (name === '' || valueStr === '' || timeStr === '') {
+      return toast.error('Todos os campos devem ser preenchidos.');
+    }
+
     const value = parseInt(valueStr);
     const time = parseInt(timeStr);
     dispatch(
@@ -41,8 +47,8 @@ function EditService() {
 
       <Form initialData={service} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome do serviço" />
-        <Input name="value" placeholder="Valor" />
-        <Input name="time" placeholder="Tempo de duração" />
+        <Input name="value" type="number" placeholder="Valor" />
+        <Input name="time" type="number" placeholder="Tempo de duração" />
 
         <button>Editar</button>
       </Form>

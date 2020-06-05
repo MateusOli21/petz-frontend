@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from '@unform/web';
 import { MdArrowBack } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 import {
   updateEstablishmentRequest,
@@ -27,9 +28,20 @@ function EditEstablishent() {
   );
 
   function handleSubmit(data) {
-    const { avatar_id: avatarId, ...rest } = data;
+    const { avatar_id: avatarId, name, email, contact, location } = data;
+
+    if (
+      avatarId === '' ||
+      name === '' ||
+      email === '' ||
+      contact === '' ||
+      location === ''
+    ) {
+      return toast.error('Todos os campos devem ser preenchidos.');
+    }
+
     const avatar_id = parseInt(avatarId);
-    const establishment = { id, avatar_id, ...rest };
+    const establishment = { id, avatar_id, name, email, contact, location };
 
     dispatch(updateEstablishmentRequest(establishment));
   }
@@ -50,7 +62,7 @@ function EditEstablishent() {
         <Input name="location" placeholder="Bairro e cidade" />
         <button>Editar</button>
       </Form>
-      <button onClick={handleDelete}>Excluit</button>
+      <button onClick={handleDelete}>Excluir</button>
       <Link to={`/establishments/${id}/schedule`}>
         <MdArrowBack size={24} />
       </Link>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { Form } from '@unform/web';
+import { toast } from 'react-toastify';
 
 import { createServiceRequest } from '../../../store/modules/service/actions';
 
@@ -15,6 +16,11 @@ function AddService() {
 
   function handleSubmit(data) {
     const { value: valueStr, time: timeStr, name } = data;
+
+    if (name === '' || valueStr === '' || timeStr === '') {
+      return toast.error('Todos os campos devem ser preenchidos.');
+    }
+
     const value = parseInt(valueStr);
     const time = parseInt(timeStr);
 
@@ -27,8 +33,12 @@ function AddService() {
 
       <Form onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome do serviço" />
-        <Input name="value" placeholder="Valor" />
-        <Input name="time" placeholder="Tempo de duração" />
+        <Input name="value" type="number" placeholder="Valor" />
+        <Input
+          name="time"
+          type="number"
+          placeholder="Tempo de duração em minutos"
+        />
 
         <button>Criar</button>
       </Form>
