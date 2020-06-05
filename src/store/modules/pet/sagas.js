@@ -39,6 +39,8 @@ export function* createPet({ payload }) {
         avatar,
       })
     );
+
+    toast.sucess('Pet criado com sucesso.');
     history.push('/pets');
   } catch (err) {
     yield put(petsFailure());
@@ -52,11 +54,31 @@ export function* updatePet({ payload }) {
     const petUpdate = { ...rest };
 
     const response = yield call(api.put, `pets/${petId}`, petUpdate);
-    const { id, name, sex, age, weight, castred, avatar } = response.data;
+    const {
+      id,
+      name,
+      sex,
+      age,
+      weight,
+      castred,
+      avatar,
+      comments,
+    } = response.data;
 
     yield put(
-      updatePetSuccess({ id, name, sex, age, weight, castred, avatar })
+      updatePetSuccess({
+        id,
+        name,
+        sex,
+        age,
+        weight,
+        castred,
+        avatar,
+        comments,
+      })
     );
+
+    toast.success('Pet atualizado com sucesso.');
     history.push('/pets');
   } catch (err) {
     yield put(petsFailure());
@@ -69,6 +91,8 @@ export function* deletePet({ payload }) {
     const id = payload.data;
     yield call(api.delete, `pets/${parseInt(id)}`);
     yield put(deletePetSuccess(id));
+
+    toast.success('Pet deletado com sucesso.');
     history.push('/pets');
   } catch (err) {
     yield put(petsFailure());

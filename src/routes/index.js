@@ -17,7 +17,6 @@ import EditService from '../pages/Provider/EditService';
 import DashboardUser from '../pages/User/DashboardUser';
 import Pets from '../pages/User/Pets';
 import Appointments from '../pages/User/Appointments';
-import AddAppointments from '../pages/User/AddAppointment';
 import AddPet from '../pages/User/AddPet';
 import EditPet from '../pages/User/EditPet';
 import Profile from '../pages/Profile';
@@ -40,14 +39,6 @@ export default function Routes() {
         exact
         path="/appointments"
         component={Appointments}
-        isPrivate
-        isUser
-      />
-
-      <Route
-        exact
-        path="/appointments/add"
-        component={AddAppointments}
         isPrivate
         isUser
       />

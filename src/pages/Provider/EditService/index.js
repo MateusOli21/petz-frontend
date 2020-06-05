@@ -32,7 +32,6 @@ function EditService() {
   }
 
   function handleDelete() {
-    console.log('asd');
     dispatch(deleteServiceRequest({ serviceId, establishmentId }));
   }
 

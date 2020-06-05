@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form } from '@unform/web';
 import { Link, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import {
   updatePetRequest,
@@ -36,14 +37,30 @@ export default function EditPet() {
       avatar_id: avatarId,
       age: ageStr,
       weight: weightStr,
+      name,
+      castred,
+      sex,
       ...rest
     } = data;
+
+    if (name === '' || castred === '' || sex === '') {
+      return toast.error('Os campos nome, sexo e castrado são obrigatórios.');
+    }
 
     const avatar_id = parseInt(avatarId);
     const age = parseInt(ageStr);
     const weight = parseInt(weightStr);
     const petId = parseInt(id);
-    const petEdited = { petId, avatar_id, age, weight, ...rest };
+    const petEdited = {
+      petId,
+      avatar_id,
+      age,
+      weight,
+      name,
+      castred,
+      sex,
+      ...rest,
+    };
 
     dispatch(updatePetRequest(petEdited));
   }
