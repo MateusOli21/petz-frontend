@@ -1,8 +1,18 @@
-# PetZ - Frontend
+# PetZ - React app
+
+### Indíce
+
+- [PetZ - React app](#petz---react-app)
+    - [Indíce](#indíce)
+  - [Introdução](#introdução)
+  - [Técnologias](#técnologias)
+  - [Demos da aplicação](#demos-da-aplicação)
+    - [Demo de uso da aplicação como cliente](#demo-de-uso-da-aplicação-como-cliente)
+    - [Demo de uso da aplicação como provedor de serviços](#demo-de-uso-da-aplicação-como-provedor-de-serviços)
 
 ## Introdução
 
-O Petz app é uma aplicação para facilitar a comunicação entre clientes que buscam serviços para seus bichinhos e provedores de serviços que possuem estabelecimentos que disponibilizam os serviços requisitados.
+O Petz app é uma aplicação criada com react, pensada para facilitar a comunicação entre clientes que buscam serviços para seus bichinhos e provedores de serviços que possuem estabelecimentos que disponibilizam os serviços requisitados.
 
 Como um cliente na aplicação, você é capaz de:
 
@@ -17,6 +27,19 @@ Já como um provedor de serviço, é possível:
 - Cadastar e editar serviços para cada estabelecimento.
 - Ver um cronograma diário com todos os agendamentos de cada estabelecimento.
 
+## Técnologias
+
+Esta aplicação é desenvolvida utilizando React e algumas bibliotecas como:
+
+- Redux e redux-saga
+- React router
+- Axios
+- Styled components
+
+A aplicação consome dados de uma API, com o mesmo nome, desenvolvida em Node.js.
+
+[Link para repositório da API](https://github.com/MateusOli21/petz-backend)
+
 ## Demos da aplicação
 
 ### Demo de uso da aplicação como cliente
@@ -26,16 +49,3 @@ Já como um provedor de serviço, é possível:
 ### Demo de uso da aplicação como provedor de serviços
 
 ![client demo gif](./assets/client_demo.gif)
-
-## Técnologias
-
-Esta aplicação é desenvolvida utilizando React e algumas bibliotecas como:
-
-- Redux e redux-saga para gerenciamento de estados
-- React router para roteamento da aplicação
-- Axios para chamadas para API
-- Styled components para estilização de páginas e componentes.
-
-A aplicação consome dados de uma API, com o mesmo nome, desenvolvida em Node.js.
-
-[Link para repositório da API](https://github.com/MateusOli21/petz-backend)
